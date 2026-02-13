@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiDB Developer Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Font Declarations */
+      @font-face {
+        font-family: 'Moderat';
+        src: url('https://static.pingcap.com/dist/fonts/moderat/Moderat-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Moderat';
+        src: url('https://static.pingcap.com/dist/fonts/moderat/Moderat-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Moderat';
+        src: url('https://static.pingcap.com/dist/fonts/moderat/Moderat-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Moderat Mono';
+        src: url('https://static.pingcap.com/dist/fonts/moderat-mono/Moderat-Mono-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      body {
+        font-family: 'Moderat', sans-serif;
+        background-color: #000000;
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050506; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: {
+                deep: '#000000',
+                base: '#000000',
+                surface: '#000000',
+                input: '#0F0F12',
+              },
+              foreground: {
+                DEFAULT: '#ffffff',
+                muted: '#A2ADB9',
+                subtle: '#5D6974',
+              },
+              accent: {
+                DEFAULT: '#ffffff',
+                bright: '#DC150B',
+              },
+              border: {
+                default: '#5D6974', // 10-20% opacity usually
+                hover: '#ffffff',
+                subtle: 'rgba(255, 255, 255, 0.1)',
+              }
+            },
+            fontFamily: {
+              sans: ['Moderat', 'sans-serif'],
+              mono: ['Moderat Mono', 'monospace'],
+            },
+            borderRadius: {
+              none: '0px',
+              DEFAULT: '0px',
+              md: '0px',
+              lg: '0px',
+              xl: '0px',
+              '2xl': '0px',
+              'full': '9999px', // Only for circular elements like the button hover effect
+            },
+            animation: {
+              'blob': 'blob 20s infinite',
+              'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
